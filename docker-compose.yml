@@ -1,0 +1,15 @@
+---
+
+version: '3.5'
+
+services:
+  web:
+    image: httpd:latest
+    container_name: hello-world
+    restart: unless-stopped
+    volumes:
+      - ./website/index.html:/usr/local/apache2/htdocs/index.html
+    ports:
+      - 8080:80
+
+...
